@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Country = (props) => {
-    const {name, capital, flag} = props.country;
+    const {name, capital, flag,} = props.country;
     const countryStyle ={
         border: '1px solid purple',
         margin: '20px',
@@ -13,7 +14,8 @@ const Country = (props) => {
         <div style={countryStyle}>
             <h2>name:{name}</h2>
             <p>capital:{capital}</p>
-            <img style={{ width:'25%' }} src={flag} alt="countryFlag"/>
+            <img style={{ width:'20%' }} src={flag} alt="countryFlag"/>
+            <p>Details: <Link to={`/country/${name}`}>Show detail of {name}</Link></p>
         </div>
     );
 };
